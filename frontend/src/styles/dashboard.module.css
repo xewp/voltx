@@ -1,0 +1,180 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.main {
+  flex: 1;
+  padding: 32px 36px;
+  overflow-y: auto;
+  animation: fadeUp 0.35s ease forwards;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.greeting {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.greeting span { color: var(--accent-gold); }
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.statCard:hover::before { opacity: 1; }
+
+.statIcon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.statValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .sections { grid-template-columns: 1fr; }
+}
+
+.sectionCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionTitle::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: var(--border-subtle);
+}
+
+.recentList { display: flex; flex-direction: column; gap: 10px; }
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+.recentItem:hover { border-color: var(--border-card); }
+
+.recentIcon {
+  width: 36px; height: 36px;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+
+.recentInfo { flex: 1; min-width: 0; }
+.recentTitle { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); truncate: ellipsis; white-space: nowrap; overflow: hidden; }
+.recentCat { font-size: 0.75rem; color: var(--text-muted); }
+
+.recentDate { font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); white-space: nowrap; }
+
+.emptyState {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.securityStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.statusLabel { font-size: 0.85rem; color: var(--text-secondary); }
+.statusBadge { font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.statusBadge.ok { background: var(--success-dim); color: var(--success); }
+.statusBadge.warn { background: var(--warning-dim); color: var(--warning); }

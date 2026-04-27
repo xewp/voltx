@@ -1,0 +1,158 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-card), var(--shadow-gold);
+  animation: fadeUp 0.3s ease forwards;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalTitle span { font-size: 1.2rem; }
+
+.closeBtn {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.closeBtn:hover { background: var(--bg-hover); color: var(--text-primary); }
+
+.modalBody { padding: 24px 28px; display: flex; flex-direction: column; gap: 18px; }
+
+.modalFooter {
+  padding: 16px 28px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.valueWrapper { position: relative; }
+.valueWrapper .form-input { font-family: var(--font-mono); font-size: 0.83rem; padding-right: 44px; }
+
+.toggleBtn {
+  position: absolute;
+  right: 12px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 1rem;
+  transition: var(--transition);
+}
+.toggleBtn:hover { color: var(--accent-gold); }
+
+.tagsInput { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+.tagChip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--accent-glow); color: var(--accent-gold);
+  border: 1px solid var(--border-card);
+  border-radius: 20px; padding: 3px 10px;
+  font-size: 0.75rem; font-weight: 500;
+}
+
+.tagChip button { font-size: 0.7rem; color: var(--accent-gold-dim); padding: 0; line-height: 1; }
+.tagChip button:hover { color: var(--danger); }
+
+.tagField {
+  flex: 1; min-width: 100px;
+  background: none; border: none; outline: none;
+  color: var(--text-primary); font-size: 0.875rem;
+  font-family: var(--font-sans);
+}
+.tagField::placeholder { color: var(--text-muted); }
+
+/* Vault Key Modal */
+.vaultCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 36px;
+  box-shadow: var(--shadow-card), var(--shadow-gold-strong);
+  animation: fadeUp 0.35s ease forwards;
+}
+
+.lockIcon {
+  font-size: 2.8rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 16px;
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+.vaultTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.vaultSubtitle {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Confirm Dialog */
+.confirmCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 380px;
+  box-shadow: var(--shadow-card), var(--shadow-gold);
+  animation: fadeUp 0.25s ease forwards;
+}
+
+.confirmBody {
+  padding: 20px 28px 4px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
